@@ -1,0 +1,310 @@
+Observation:
+- using PCA helps to reduce feature dimension, hence reduce computation time
+- using PCA helps to select most useful features, hence increase accuracy: since PCA find features with most variance(large variance good in this case, since that make it more easier to seperate different class)
+
+- example: 
+1. rectangle cube class1 w/ 4 features: 2x2x4 and mess: 10kg
+2. rectangle cube2 class2 w/ 4 features: 2x2x3 and mess: 1kg
+clearly, feature 1,2,3 are not different enough for classifer to seperate them. seperation on first three features will be hard and inaccurate. However, the last feature mess has a large variance so it is more likely to draw a decision on that (PCA will likely select mess as first conponent)
+
+
+SVM + POLY + PCA = 40 for 87.49% accuracy
+- SVM + poly is slightly better than SVM linear
+- less PCA required since poly kernel raised bouduary to higher dimension for classification
+- less PCA (40 vs 140) less executation time (3 minutes vs 9.9 minutes)
+
+Hyper-parameter choice: 
+
+C Parameter:
+- higher c: more wavy boundary, more accuracy in training set, usually overfit in test set  
+- lower c: more smooth boundary, less accuracy in training set, but less overfit to test set  
+- usually, we would like to have a simple linear boundary to prevent overfitting  
+
+
+Gamma Parameter:
+- smaller: far -> more linear straight boundary (lower bias, higer variance)
+- larger: close -> wavy boundary (higer bias, lower variance)
+
+########## SVM -t 0 #############
+Accuracy = 84.74% (8474/10000) (classification)
+Accuracy: 0.8474.
+Time to classify: 96.33 minuites.
+
+Accuracy = 84.74% (8474/10000) (classification)
+Accuracy: 0.8474.
+Time to classify: 28.83 minuites.
+
+########## SVM Linear (PCA = 10) ################
+Accuracy = 77.61% (7761/10000) (classification)
+Accuracy: 0.7761.
+Time to classify: 1.25 minuites.
+
+########## SVM Linear (PCA = 20) ################
+
+Accuracy = 81.64% (8164/10000) (classification)
+Accuracy: 0.8164.
+Time to classify: 1.59 minuites.
+
+########## SVM Linear (PCA = 30) ################
+
+Accuracy = 82.61% (8261/10000) (classification)
+Accuracy: 0.8261.
+Time to classify: 5.01 minuites.
+
+########## SVM Linear (PCA = 40) ################
+
+Accuracy = 83.38% (8338/10000) (classification)
+Accuracy: 0.8338.
+Time to classify: 6.43 minuites.
+
+########## SVM Linear (PCA = 50) ################
+
+Accuracy = 83.53% (8353/10000) (classification)
+Accuracy: 0.8353.
+Time to classify: 6.82 minuites.
+
+########## SVM Linear (PCA = 80) ################
+
+Accuracy = 84.94% (8494/10000) (classification)
+Accuracy: 0.8494.
+Time to classify: 5.28 minuites.
+
+########## SVM Linear (PCA = 90) ################
+
+Accuracy = 85.08% (8508/10000) (classification)
+Accuracy: 0.8508.
+Time to classify: 4.75 minuites.
+
+2########## SVM Linear (PCA = 100) ################
+
+Accuracy = 85.29% (8529/10000) (classification)
+Accuracy: 0.8529.
+Time to classify: 8.20 minuites.
+
+########## SVM Linear (PCA = 120) ################
+
+Accuracy = 85.12% (8512/10000) (classification)
+Accuracy: 0.8512.
+Time to classify: 9.26 minuites.
+
+1########## SVM Linear (PCA = 140) ################
+
+Accuracy = 85.37% (8537/10000) (classification)
+Accuracy: 0.8537.
+Time to classify: 9.94 minuites.
+
+########## SVM Linear (PCA = 160) ################
+
+Accuracy = 85.22% (8522/10000) (classification)
+Accuracy: 0.8522.
+Time to classify: 9.59 minuites.
+
+2########## SVM Linear (PCA = 180) ################
+
+Accuracy = 85.29% (8529/10000) (classification)
+Accuracy: 0.8529.
+Time to classify: 8.30 minuites.
+
+3########## SVM Linear (PCA = 200) ################
+
+Accuracy = 85.2% (8520/10000) (classification)
+Accuracy: 0.8520.
+Time to classify: 9.17 minuites.
+
+########## SVM Linear (PCA = 300) ################
+
+Accuracy = 85.01% (8501/10000) (classification)
+Accuracy: 0.8501.
+Time to classify: 12.48 minuites.
+
+########## SVM Linear (PCA = 400) ################
+
+Accuracy = 84.98% (8498/10000) (classification)
+Accuracy: 0.8498.
+Time to classify: 15.84 minuites.
+
+
+########## SVM Polynomial NO PCA ############
+WARNING: using -h 0 may be faster
+
+Accuracy = 66.81% (6681/10000) (classification)
+Accuracy: 0.6681.
+Time to classify: 152.89 minuites.
+
+########## SVM Polynomial PCA=10 ############
+
+Accuracy = 82.8% (8280/10000) (classification)
+Accuracy: 0.8280.
+Time to classify: 2.71 minuites.
+
+
+########## SVM Polynomial PCA=25 ############
+
+Accuracy = 87.33% (8733/10000) (classification)
+Accuracy: 0.8733.
+Time to classify: 1.46 minuites.
+
+1 ########## SVM Polynomial PCA=40 ############
+
+Accuracy = 87.49% (8749/10000) (classification)
+Accuracy: 0.8749.
+Time to classify: 3.37 minuites.
+
+1 ########## SVM Polynomial PCA=40 cost=10 ############
+
+Accuracy = 88.59% (8859/10000) (classification)
+Accuracy: 0.8859.
+Time to classify: 2.26 minuites.
+
+2 ########## SVM Polynomial PCA=45 ############
+
+Accuracy = 87.45% (8745/10000) (classification)
+Accuracy: 0.8745.
+Time to classify: 4.07 minuites.
+
+
+3 ########## SVM Polynomial PCA=50 ############
+
+Accuracy = 87.41% (8741/10000) (classification)
+Accuracy: 0.8741.
+Time to classify: 4.76 minuites.
+
+########## SVM Polynomial PCA=100 ############
+
+Accuracy = 85.25% (8525/10000) (classification)
+Accuracy: 0.8525.
+Time to classify: 5.99 minuites.
+
+
+########## SVM Polynomial PCA=200 ############
+
+Accuracy = 78.28% (7828/10000) (classification)
+Accuracy: 0.7828.
+Time to classify: 18.74 minuites.
+
+
+########## SVM RBF NO PCA ######################
+Accuracy = 43.27% (4327/10000) (classification)
+Accuracy: 0.4327.
+Time to classify: 407.95 minuites.
+
+
+########## RBF = '-c 10 -t 2 -e 0.1' PCA=40 #####
+
+Accuracy = 88.69% (8869/10000) (classification)
+Accuracy: 0.8869.
+Time to classify: 4.04 minuites.
+
+########## RBF2 = '-c 10 -t 2 -g 0.1 -e 0.1' PCA=40 #####
+Accuracy = 88.37% (8837/10000) (classification)
+Accuracy: 0.8837.
+Time to classify: 7.87 minuites.
+
+########## RBF3 = '-c 1 -t 2 -g 0.1 -e 0.1' PCA=40 #####
+
+Accuracy = 88.18% (8818/10000) (classification)
+Accuracy: 0.8818.
+Time to classify: 6.41 minuites.
+
+1 ########## RBF1 = '-c 10 -t 2 -g 1/40' PCA=40 #####
+
+Accuracy = 88.77% (8877/10000) (classification)
+Accuracy: 0.8877.
+Time to classify: 4.33 minuites.
+
+########## RBF2 = '-c 1 -t 2 -g 0.1 -e 0.1' #####
+Accuracy = 88.12% (8812/10000) (classification)
+Accuracy: 0.8812.
+Time to classify: 6.72 minuites.
+
+########## RBF3 = '-c 1 -t 2 -g 0.1' #####
+
+Accuracy = 88.14% (8814/10000) (classification)
+Accuracy: 0.8814.
+Time to classify: 7.52 minuites.
+
+
+
+5-fold Cross Validation Accuracy = 89.4867%
+10-fold Cross Validation Accuracy = 89.6517%
+
+
+Observation:
+
+### Non-linear characteristic
+- NN has non-linear characteristic since ReLu, Softmax classifier activation function are non-linear
+- linear SVM is linear  
+- poly/RBF SVM is non-linear since they used non-linear kernel  
+- non-linear characteristic is good since it is more robust  
+
+
+
+
+########## CNN 1 ######################
+- validation samples not used
+- iteration: 20000
+- batch size: 50
+- dropout rate during training: 0.5
+test accuracy 91.12%
+
+########## CNN 1 w/ validation data in ######################
+- validation samples used
+- iteration: 20000
+- batch size: 50
+- dropout rate during training: 0.5
+
+test accuracy 0.9148
+
+
+################################## LeNet
+
+Step 8500 (epoch 9.89), 481.4 ms
+Minibatch loss: 1.786, learning rate: 0.006302
+Minibatch error: 6.2%
+Validation error: 8.5%
+Test error: 9.2%
+
+
+########## Questions & Things to try #############
+- beautiful graph
+
+-- train_step.run ??? start a session?
+- cross-validation SVM: just need (-v) 
+- cross-validation in NN (already done by seeding)
+
+- NN network dimension clear 10mins ✅
+- base idea / structure of leNet 10mins✅
+- VGG
+- AlexNet
+- base idea / structure of ResNet 10mins
+
+
+############ References: #####################
+https://www.tensorflow.org/get_started/mnist/beginners
+https://github.com/zalandoresearch/fashion-mnist
+
+MNIST-classification-example-3: 
+https://github.com/yuzhounh/MNIST-classification-example-3/blob/master/classify_MNIST.py
+
+Get image from MNIST data set:
+http://www.csuldw.com/2016/02/25/2016-02-25-machine-learning-MNIST-dataset/
+
+########## SVM dimension reduction #######
+Dimension reduction [great post!] 
+http://www.cnblogs.com/kym/archive/2012/12/21/2827791.html
+- Cosine similarity: https://en.wikipedia.org/wiki/Cosine_similarity
+- Curse of dimensionality: data become sparse as we go to high dimensional space. Sparsicity in data is not good for algorithm to learn a the feature in high dimension. Therefore, reduce dimensionality
+
+silklearn dimen reduction: 
+https://stackoverflow.com/questions/32194967/how-to-do-pca-and-svm-for-classification-in-python
+
+PCA on on MNIST example:
+http://vzaguskin.github.io/mnistpcaknn1/
+
+
+understand SVM parameter meanings in one video
+https://classroom.udacity.com/courses/ud120/lessons/2252188570/concepts/23972185420923
+
+What are C and gamma with regards to a support vector machine?
+https://www.quora.com/What-are-C-and-gamma-with-regards-to-a-support-vector-machine
+

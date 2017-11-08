@@ -1,0 +1,2 @@
+## softmax function:
+gives us a list of values between 0 and 1 that add up to 1. Even later on, when we train more sophisticated models, the final step will be a layer of softmax.

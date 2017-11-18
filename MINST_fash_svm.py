@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: xruan
 # @Date:   2017-10-26 11:05:46
-# @Last modified by:   xruan
-# @Last Modified time: 2017-11-03 12:40:28w
+# @Last modified by:   Xuyi Ruan
+# @Last Modified time: 2017-11-18 14:19:26w
 # modified from: https://github.com/yuzhounh/MNIST-classification-example-3/blob/master/classify_MNIST.py
 
 from tensorflow.examples.tutorials.mnist import input_data
@@ -20,9 +20,8 @@ RBF_CV = '-c 10 -t 2 -v 10'
 
 
 TRAIN_KERNEL = RBF
-MODEL_OUT_NAME = 'MINST_svm_poly.model'
+MODEL_OUT_NAME = 'MINST_svm_poly_tmp.model'
 PCA_component = 40
-
 
 # load the MNIST data by TensorFlow
 mnist = input_data.read_data_sets("MNIST_data/fashion", one_hot=False)
@@ -43,10 +42,15 @@ label_train = concatenate((label_train, label_validation), axis=0)
 print("PCA processing...")
 pca = PCA(n_components=PCA_component)
 
+print("b4 fit:", type(image_train))
 pca.fit(image_train)
+
+print("after fit:", type(image_train))
 
 image_train = pca.transform(image_train)
 image_test = pca.transform(image_test)
+
+print("after pac:", type(image_train))
 
 print("PCA done...")
 

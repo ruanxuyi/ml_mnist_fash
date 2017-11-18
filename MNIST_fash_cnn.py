@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 # @Author: xruan
 # @Date:   2017-10-28 17:10:27
-# @Last modified by:   xruan
-# @Last Modified time: 2017-11-05 21:09:26w
-# modifed from tutorial: https://www.tensorflow.org/get_started/mnist/pros
+# @Last modified by:   Xuyi Ruan
+# @Last Modified time: 2017-11-17 14:54:28w
+# modifed from: https://www.tensorflow.org/get_started/mnist/pros
 
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 from numpy import concatenate, mean, asarray
 from sklearn.decomposition import PCA
 import time
-
-PCA_component = 40
 
 def weight_variable(shape):
   initial = tf.truncated_normal(shape, stddev=0.1)

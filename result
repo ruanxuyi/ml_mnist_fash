@@ -238,7 +238,24 @@ Observation:
 - non-linear characteristic is good since it is more robust  
 
 
+```
 
+('x:', TensorShape([Dimension(None), Dimension(784)]))
+('W_conv1:', TensorShape([Dimension(5), Dimension(5), Dimension(1), Dimension(32)]))
+('x_image:', TensorShape([Dimension(None), Dimension(28), Dimension(28), Dimension(1)]))
+('h_conv1:', TensorShape([Dimension(None), Dimension(28), Dimension(28), Dimension(32)]))
+('h_pool1:', TensorShape([Dimension(None), Dimension(14), Dimension(14), Dimension(32)]))
+('h_pool1:', TensorShape([Dimension(None), Dimension(14), Dimension(14), Dimension(32)]))
+('h_conv2:', TensorShape([Dimension(None), Dimension(14), Dimension(14), Dimension(64)]))
+('h_pool2:', TensorShape([Dimension(None), Dimension(7), Dimension(7), Dimension(64)]))
+('h_pool2_flat:', TensorShape([Dimension(None), Dimension(3136)]))
+('h_fc1:', TensorShape([Dimension(None), Dimension(1024)]))
+('h_fc1_drop:', TensorShape([Dimension(None), Dimension(1024)]))
+('y_conv:', TensorShape([Dimension(None), Dimension(10)]))
+
+- Dimension(None) reserve for batch size
+- why 
+```
 
 ########## CNN 1 ######################
 - validation samples not used

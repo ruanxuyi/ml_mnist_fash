@@ -1,0 +1,18 @@
+
+Parameters:
+AUGMENTATION_TYPE=affine
+BATCH_SIZE=128
+GPU_MEMORY_FRACTION=1.0
+GPU_NUM=0
+IGNORE_EXIST_MODEL=False
+LEARNING_RATE=0.001
+MODEL_NAME=vggnet
+NUM_EPOCHS=150
+RESNET_LAYER_N=3
+SAVE_DIR=tmp
+
+========== save_dir is tmp!!! ==========
+Extracting MNIST_data/train-images-idx3-ubyte.gz
+Extracting MNIST_data/train-labels-idx1-ubyte.gz
+Extracting MNIST_data/t10k-images-idx3-ubyte.gz
+Extracting MNIST_data/t10k-labels-idx1-ubyte.gz

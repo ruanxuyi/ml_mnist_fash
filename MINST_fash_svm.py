@@ -41,16 +41,10 @@ label_train = concatenate((label_train, label_validation), axis=0)
 # PCA
 print("PCA processing...")
 pca = PCA(n_components=PCA_component)
-
-print("b4 fit:", type(image_train))
 pca.fit(image_train)
-
-print("after fit:", type(image_train))
 
 image_train = pca.transform(image_train)
 image_test = pca.transform(image_test)
-
-print("after pac:", type(image_train))
 
 print("PCA done...")
 

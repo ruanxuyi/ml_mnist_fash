@@ -2,7 +2,7 @@
 # @Author: xruan
 # @Date:   2017-10-26 11:05:46
 # @Last modified by:   Xuyi Ruan
-# @Last Modified time: 2017-11-25 00:31:53w
+# @Last Modified time: 2017-11-25 00:35:43w
 # modified from: https://github.com/yuzhounh/MNIST-classification-example-3/blob/master/classify_MNIST.py
 
 from tensorflow.examples.tutorials.mnist import input_data
@@ -12,6 +12,8 @@ from sklearn.decomposition import PCA
 from sklearn.naive_bayes import MultinomialNB
 import time
 from collections import Counter
+
+PCA_component = 40
 
 # load the MNIST data by TensorFlow
 mnist = input_data.read_data_sets("MNIST_data/fashion", one_hot=False)

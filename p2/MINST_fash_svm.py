@@ -2,7 +2,7 @@
 # @Author: xruan
 # @Date:   2017-10-26 11:05:46
 # @Last modified by:   Xuyi Ruan
-# @Last Modified time: 2017-11-18 14:19:26w
+# @Last Modified time: 2017-11-25 01:02:56w
 # modified from: https://github.com/yuzhounh/MNIST-classification-example-3/blob/master/classify_MNIST.py
 
 from tensorflow.examples.tutorials.mnist import input_data
@@ -53,6 +53,9 @@ image_train = image_train.tolist()
 image_test = image_test.tolist()
 label_train = label_train.tolist()
 label_test = label_test.tolist()
+
+print(image_train)
+exit()
 
 print("labels: ", Counter(label_test))
 

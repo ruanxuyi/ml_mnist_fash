@@ -2,7 +2,7 @@
 # @Author: xruan
 # @Date:   2017-10-26 11:05:46
 # @Last modified by:   Xuyi Ruan
-# @Last Modified time: 2017-11-25 00:35:43w
+# @Last Modified time: 2017-11-25 01:02:22w
 # modified from: https://github.com/yuzhounh/MNIST-classification-example-3/blob/master/classify_MNIST.py
 
 from tensorflow.examples.tutorials.mnist import input_data
@@ -10,10 +10,11 @@ from numpy import concatenate, mean, asarray
 from svmutil import *
 from sklearn.decomposition import PCA
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.naive_bayes import GaussianNB
 import time
 from collections import Counter
 
-PCA_component = 40
+PCA_component = 10
 
 # load the MNIST data by TensorFlow
 mnist = input_data.read_data_sets("MNIST_data/fashion", one_hot=False)
@@ -32,11 +33,11 @@ label_train = concatenate((label_train, label_validation), axis=0)
 
 # PCA
 print("PCA processing...")
-pca = PCA(n_components=PCA_component)
-pca.fit(image_train)
+#pca = PCA(n_components=PCA_component)
+#pca.fit(image_train)
 
-image_train = pca.transform(image_train)
-image_test = pca.transform(image_test)
+#image_train = pca.transform(image_train)
+#image_test = pca.transform(image_test)
 
 print("PCA done...")
 
@@ -50,6 +51,8 @@ y_test = label_test.tolist()
 time_start = time.time() 
 
 # linear bayes classifier
+# clf = GaussianNB()
+
 clf = MultinomialNB()
 # Perform the predictions
 clf.fit(x_train, y_train)

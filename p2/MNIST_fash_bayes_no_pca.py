@@ -17,7 +17,7 @@ from collections import Counter
 PCA_component = 10
 
 # load the MNIST data by TensorFlow
-mnist = input_data.read_data_sets("MNIST_data/fashion", one_hot=False)
+mnist = input_data.read_data_sets("../MNIST_data/fashion", one_hot=False)
 
 image_train = mnist.train.images
 image_validation = mnist.validation.images

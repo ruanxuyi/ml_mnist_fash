@@ -12,11 +12,11 @@ from sklearn.decomposition import PCA
 import time
 from collections import Counter
 
-PCA_component = 40
+PCA_component = 45
 KNN = 6
 
 # load the MNIST data by TensorFlow
-mnist = input_data.read_data_sets("MNIST_data/fashion", one_hot=False)
+mnist = input_data.read_data_sets("../MNIST_data/fashion", one_hot=False)
 
 image_train = mnist.train.images
 image_validation = mnist.validation.images
@@ -50,12 +50,12 @@ y_test = label_test.tolist()
 time_start = time.time() 
 
 # linear bayes classifier
-neigh = KNeighborsClassifier(n_neighbors=KNN, n_jobs=-1)
+neigh = KNeighborsClassifier(n_neighbors=KNN, n_jobs=-1, weights='distance')
 
 # Perform the predictions
 neigh.fit(x_train, y_train)
 # Perform the predictions
-y_predicted = clf.predict(x_test)
+y_predicted = neigh.predict(x_test)
 
 # int to float
 y_predicted = [int(tmp) for tmp in y_predicted] 
@@ -66,7 +66,6 @@ y_test = asarray(y_test)
 
 # accuracy
 accuracy = mean((y_predicted == y_test) * 1)
-print('n_component: %d' % n_c)
 print('Accuracy: %0.4f.' % accuracy)
 
 # time used

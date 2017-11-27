@@ -17,7 +17,7 @@ from collections import Counter
 PCA_component = 50
 
 # load the MNIST data by TensorFlow
-mnist = input_data.read_data_sets("MNIST_data/fashion", one_hot=False)
+mnist = input_data.read_data_sets("../MNIST_data/fashion", one_hot=False)
 
 image_train = mnist.train.images
 image_validation = mnist.validation.images
@@ -31,7 +31,7 @@ label_test = mnist.test.labels
 image_train = concatenate((image_train, image_validation), axis=0)
 label_train = concatenate((label_train, label_validation), axis=0)
 
-for i in range(1, 15):
+for i in range(1, 10):
 	# PCA
 	print("PCA processing...")
 	n_c = PCA_component * i

@@ -2,7 +2,7 @@
 # @Author: xruan
 # @Date:   2017-11-26 11:05:46
 # @Last modified by:   Xuyi Ruan
-# @Last Modified time: 2017-11-26 22:32:44w
+# @Last Modified time: 2017-11-26 22:35:03w
 
 from tensorflow.examples.tutorials.mnist import input_data
 from numpy import concatenate, mean, asarray
@@ -50,7 +50,7 @@ y_test = label_test.tolist()
 time_start = time.time() 
 
 # linear bayes classifier
-neigh = KNeighborsClassifier(n_neighbors=KNN)
+neigh = KNeighborsClassifier(n_neighbors=KNN, n_jobs=-1)
 
 # Perform the predictions
 neigh.fit(x_train, y_train)

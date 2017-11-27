@@ -1,20 +1,19 @@
 # -*- coding: utf-8 -*-
 # @Author: xruan
-# @Date:   2017-10-26 11:05:46
+# @Date:   2017-11-26 11:05:46
 # @Last modified by:   Xuyi Ruan
-# @Last Modified time: 2017-11-26 21:39:53w
+# @Last Modified time: 2017-11-26 22:32:44w
 
 from tensorflow.examples.tutorials.mnist import input_data
 from numpy import concatenate, mean, asarray
 from svmutil import *
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.decomposition import PCA
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.naive_bayes import GaussianNB
-from sklearn.naive_bayes import BernoulliNB
 import time
 from collections import Counter
 
-PCA_component = 10
+PCA_component = 40
+KNN = 6
 
 # load the MNIST data by TensorFlow
 mnist = input_data.read_data_sets("MNIST_data/fashion", one_hot=False)
@@ -31,10 +30,19 @@ label_test = mnist.test.labels
 image_train = concatenate((image_train, image_validation), axis=0)
 label_train = concatenate((label_train, label_validation), axis=0)
 
+# PCA
+print("PCA processing...")
+pca = PCA(n_components=PCA_component)
+pca.fit(image_train)
+
+image_train_pca = pca.transform(image_train)
+image_test_pca = pca.transform(image_test)
+
+print("PCA done...")
 
 # array to list
-x_train = image_train.tolist()
-x_test = image_test.tolist()
+x_train = image_train_pca.tolist()
+x_test = image_test_pca.tolist()
 y_train = label_train.tolist()
 y_test = label_test.tolist()
 
@@ -42,12 +50,10 @@ y_test = label_test.tolist()
 time_start = time.time() 
 
 # linear bayes classifier
-clf = GaussianNB()
-#clf = BernoulliNB()
-# clf = MultinomialNB()
+neigh = KNeighborsClassifier(n_neighbors=KNN)
 
 # Perform the predictions
-clf.fit(x_train, y_train)
+neigh.fit(x_train, y_train)
 # Perform the predictions
 y_predicted = clf.predict(x_test)
 
@@ -60,6 +66,7 @@ y_test = asarray(y_test)
 
 # accuracy
 accuracy = mean((y_predicted == y_test) * 1)
+print('n_component: %d' % n_c)
 print('Accuracy: %0.4f.' % accuracy)
 
 # time used

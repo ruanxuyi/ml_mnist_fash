@@ -2,8 +2,7 @@
 # @Author: xruan
 # @Date:   2017-10-26 11:05:46
 # @Last modified by:   Xuyi Ruan
-# @Last Modified time: 2017-11-25 01:02:22w
-# modified from: https://github.com/yuzhounh/MNIST-classification-example-3/blob/master/classify_MNIST.py
+# @Last Modified time: 2017-11-26 21:40:03w
 
 from tensorflow.examples.tutorials.mnist import input_data
 from numpy import concatenate, mean, asarray

@@ -9,7 +9,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 
 
 # load the MNIST data by TensorFlow
-mnist = input_data.read_data_sets("MNIST_data/fashion", one_hot=True)
+mnist = input_data.read_data_sets("../MNIST_data/fashion", one_hot=True)
 
 # start interactive session
 sess = tf.InteractiveSession()

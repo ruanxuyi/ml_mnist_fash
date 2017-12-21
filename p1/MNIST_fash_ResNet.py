@@ -179,7 +179,7 @@ def main(unused_args):
   # Download and load MNIST data.
   # mnist = tf.contrib.learn.datasets.DATASETS['mnist']('/MNIST_data/fashion/')
   # mnist = input_data.read_data_sets("MNIST_data/fashion")
-  mnist = input_data.read_data_sets("MNIST_data/fashion", validation_size=0)
+  mnist = input_data.read_data_sets("../MNIST_data/fashion", validation_size=0)
 
   # Create a new resnet classifier.
   classifier = tf.estimator.Estimator(model_fn=res_net_model)

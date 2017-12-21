@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # load the MNIST data by TensorFlow
-mnist = input_data.read_data_sets("../MNIST_data/fashion", one_hot=True)
+mnist = input_data.read_data_sets("../MNIST_data/fashion", one_hot=False)
 
 x_train = mnist.train.images
 y_train = mnist.train.labels

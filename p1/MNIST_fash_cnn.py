@@ -27,7 +27,7 @@ def max_pool_2x2(x):
                         strides=[1, 2, 2, 1], padding='SAME')
 
 # load the MNIST data by TensorFlow
-mnist = input_data.read_data_sets("MNIST_data/fashion", one_hot=True, validation_size=0)
+mnist = input_data.read_data_sets("../MNIST_data/fashion", one_hot=True, validation_size=0)
 
 # start interactive session
 # sess = tf.InteractiveSession()

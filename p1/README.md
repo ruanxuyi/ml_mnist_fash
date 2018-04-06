@@ -1,8 +1,3 @@
-TODO:
-
-why svm need dimension reduction, but nn not?
-
-
 # ENEE633 Projet 1: Fashion-MNIST classifcation
 **by Xuyi Ruan 11/18/2017**
 ## 1. Introduction

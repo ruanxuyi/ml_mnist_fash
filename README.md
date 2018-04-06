@@ -1,6 +1,12 @@
 # ENEE633 Projet 1: Fashion-MNIST classifcation
 **Author Xuyi Ruan 11/18/17 - 12/10/17**
 
+-	Wrote code in Python to compare classification models on Fashion-MNIST dataset on TensorFlow;
+-	Started with SVM, a light-weight algorithm on 50,000/10,000 training and test set, applied dimension reduction 
+with PCA and achieved reasonable test accuracy of 88.7%;
+-	Experimented with more computational expensive ResNet liked deep learning model, on a EC2 GPU instance, 
+which improved the accuracy to 93.81%, where state-of-art was 95%;
+
 MNIST handwritten dataset is one of the classical data set to benchmark classification model in machine learning. As GPUs became more accessible, many of the neural network models could easily achieved $99.0\%$ or above accuracy on MNIST handwritten number dataset. Because of this, the MNIST fashion dataset emerged.  
 
 Fashion-MNIST, a MNIST like dataset, has the same format (training set of 60,000 examples and a test set of 10,000 examples, input size $28\times28$, and $10$ output classes) as MNIST handwritten dataset but slightly more complicated image contents. The intension of this dataset is to make more distinguish performance for different types of classifers. We will explore Bayes, nearest neighbor, SVM(linear and non-linear) and various neural network models and compare their performance on Fashion-MNIST dataset in this project. 

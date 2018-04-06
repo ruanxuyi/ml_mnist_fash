@@ -1,6 +1,8 @@
 # ENEE633 Projet 1: Fashion-MNIST classifcation  
 ## Author Xuyi Ruan 11/18/17 - 12/10/17
 
+![](https://github.com/ruanxuyi/ml_mnist_fash/blob/master/p2/MNIST_fash.png)
+
 -	Wrote code in Python to compare classification models on Fashion-MNIST dataset on TensorFlow;
 -	Started with SVM, a light-weight algorithm on 50,000/10,000 training and test set, applied dimension reduction 
 with PCA and achieved reasonable test accuracy of 88.7%;
